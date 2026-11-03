@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     container_name: pkwu_tbsinarjava_app
     ports:
-      - "8081:80"
+      - "8084:80"
     volumes:
       - tbsinarjava_database:/var/www/html/database
       - tbsinarjava_storage:/var/www/html/storage
