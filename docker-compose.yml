@@ -1,0 +1,28 @@
+# Inventaris Toko Bangunan — PHP + Nginx, database SQLite di volume
+# Tidak butuh MySQL / .env
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pkwu_tbsinarjava_app
+    ports:
+      - "8081:80"
+    volumes:
+      - tbsinarjava_database:/var/www/html/database
+      - tbsinarjava_storage:/var/www/html/storage
+    restart: unless-stopped
+    networks:
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    name: dokploy-network
+    external: true
+
+volumes:
+  tbsinarjava_database:
+    driver: local
+  tbsinarjava_storage:
+    driver: local

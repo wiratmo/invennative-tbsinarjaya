@@ -1,0 +1,14 @@
+.git
+.gitignore
+.cursor
+node_modules
+vendor
+storage/cache
+database/*.sqlite
+database/*.sqlite-*
+tools/tailwindcss*
+*.md
+.env
+.env.*
+docker-compose.yml
+Dockerfile
